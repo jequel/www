@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
 <link rel="import" href="../bower_components/app-layout/app-box/app-box.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
 
 
@@ -39,6 +40,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         display: block;
       }
+
+
 
       app-header {
         color: #fff;
@@ -133,7 +136,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       };
     }
 
-    section {
+
+    .section {
       padding-top: 100px;
     }
 
@@ -160,18 +164,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin: 20px auto;
       background-color: black;
     }
-
-    .colorRed
+    /*Take a look */ 
+    .colorYellow
     {
       color : var(--google-yellow-500);
     }
-    .colorBlue
+    .colorGhost
     {
-      color : var(--google-blue-700);
+      color : #eee;
     }
-    .colorGreen
+
+    .triangle-down-left {
+    	width: 0;
+      height: 0;
+      border-top: 60px solid var(--google-yellow-500);
+      border-right: 90px solid transparent;
+      display:inline-block;
+    }
+    .triangle-down-right {
+    	width: 0;
+      height: 0;
+      border-top: 60px solid var(--google-yellow-700);
+      border-left: 90px solid transparent;
+      display:inline-block;
+    }
+
+    .bigYellowSquare
     {
-      color : var(--google-green-500);
+       background-color : var(--google-yellow-500);
 
     }
 
@@ -186,12 +206,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         tail="{{subroute}}"></app-route>
 
      <header>
-    <app-toolbar>
+    <app-toolbar id="appTop">
       <div main-title>JEQUEL PROJECT</div>
     </app-toolbar>
     <app-box threshold="64">
       <ul role="navigation" class="nav">
-        <li><a href="#speed">Home</a></li>
+        <li><a href="#appTop">Home</a></li>
         <li><a href="#modern">Start</a></li>
         <li><a href="#standard">Docs</a></li>
         <li><a href="#create">Download</a></li>
@@ -200,11 +220,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </header>
 
   <main>
-    <section id="speed">
+    <section>
+
       <article>
-        <hr />
-        <h2><div class="colorRed">JAVARSCRIPT</div> <div class="colorGreen">QUERY</div> <div>COMPONENT</div></h2>
-        <p>This is Heroic Javascript Framework for data search against json and arrays</p>
+              <div>
+       <div class="triangle-down-right"></div>
+       <div class="triangle-down-left"></div>
+      </div>
+        <br/>
+        <h2><div class="colorGhost">JEQUEL</div></h2>
+        <p class="colorGhost">This is Heroic Javascript Framework for data search against json and arrays</p>
+       <paper-button class="bigYellowSquare">Download Latest</paper-button>
+      
       </article>
       <app-box class="first" effects="parallax-background">
         <!--
@@ -216,7 +243,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-box>
     </section>
 
-    <section id="modern">
+    <section class="section" id="modern">
       <article>
         <hr />
         <h2>For Modern Browsers</h2>
@@ -228,16 +255,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <app-box class="second" effects="parallax-background"></app-box>
     </section>
 
-    <section id="standard">
+    <section class="section" id="standard">
       <article>
         <hr />
-        <h2>Using Web Components</h2>
+        <h2>Web Components Ready</h2>
         <p>Polymer leverages web components, a new set of standards designed to provide reusable components for the web.</p>
       </article>
       <app-box class="third" effects="parallax-background"></app-box>
     </section>
 
-    <section id="create">
+    <section class="section" id="create">
       <article>
         <hr />
         <h2>Create your own elements</h2>
