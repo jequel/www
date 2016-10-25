@@ -37,7 +37,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         --app-primary-color: #4285f4;
         --app-secondary-color: black;
-
         display: block;
       }
 
@@ -106,6 +105,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       height: 640px;
     }
 
+
     .second {
       --app-box-background-front-layer: {
         background-image: url(//app-layout-assets.appspot.com/assets/bg2.jpg);
@@ -152,11 +152,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-size: 50px;
       margin: 5px;
     }
+
     article p {
       font-size: 18px;
       line-height: 30px;
     }
-
     article hr {
       width: 100px;
       height: 1px;
@@ -188,11 +188,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       border-left: 90px solid transparent;
       display:inline-block;
     }
-
     .bigYellowSquare
     {
        background-color : var(--google-yellow-500);
+    }
+    .infoContainers
+    {
+      text-align: center;
+      margin: 0 auto 100px auto;
+    }
 
+    .infoContainer
+    {
+      font-weight: 100;
+      max-width: 500px;
+      text-align: center;
+      background-color : #1976d2;
+      padding : 10px;
+      margin : 10px;
+      display : inline-block;
+      margin: 0 auto 10px auto;
+    }
+    .infoContainer h3 {
+      font-weight: 100;
+      font-size: 30px;
+      margin: 5px;
+      color: black;
     }
 
 
@@ -223,9 +244,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <section>
 
       <article>
-              <div>
-       <div class="triangle-down-right"></div>
-       <div class="triangle-down-left"></div>
+       <div>
+        <div class="triangle-down-right"></div>
+        <div class="triangle-down-left"></div>
       </div>
         <br/>
         <h2><div class="colorGhost">JEQUEL</div></h2>
@@ -239,6 +260,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           In this case, we create a custom background by adding the attribute `background` to the `img` in
           the light DOM.
         -->
+     
+        <br/>
+        <br/>
+        <br/>
+        <div class="infoContainers">
+          <div class="infoContainer">
+            <h3><div class="colorGhost">Direct download</div></h3>
+            <p class="colorGhost">This is Heroic Javascript Framework for data search against json and arrays</p>
+            <paper-button class="bigYellowSquare">.ZIP</paper-button>  
+          </div>
+          
+
+          <div class="infoContainer">
+            <h3><div class="colorGhost">Get Bower</div></h3>
+            <p class="colorGhost">This is Heroic Javascript Framework for data search against json and arrays</p>
+            <paper-button class="bigYellowSquare">bower install --save Jequel/jequel</paper-button>  
+          </div>
+        </div>
+       <br/><br/>
+       
         <img background src="//app-layout-assets.appspot.com/assets/bg1.jpg" style="width:100%; height: 900px" />
       </app-box>
     </section>
@@ -252,7 +293,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!--
         This app-box uses the class `.second` and the mixin `--app-box-background-front-layer` to assign the background image.
       -->
-      <app-box class="second" effects="parallax-background"></app-box>
+      <app-box class="second" effects="parallax-background">
+      </app-box>
     </section>
 
     <section class="section" id="standard">
