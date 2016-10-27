@@ -384,7 +384,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <h2><div class="colorGhost">JEQUEL</div></h2>
         <div class="stringsAttachedText">*J is silent ;)</div>
         <p class="colorGhost">This is a Heroic Javascript Framework for data search against json and arrays</p>
-        <paper-button class="bigYellowSquare">Download Latest</paper-button>
+        <paper-button class="bigYellowSquare" onClick="_onDownloadButtonClick(this)">Download Latest</paper-button>
       </article>
       <app-box class="first" effects="parallax-background">
 
@@ -456,8 +456,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <section class="section" id="standard">
       <article>
         <hr />
-        <h2>Web Components Ready</h2>
-        <p>Polymer leverages web components, a new set of standards designed to provide reusable components for the web.</p>
+        <h2 class="colorGhost">Lorem ipsum dolor </h2>
+        <p class="colorYellow">Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.</p>
       </article>
       <app-box class="third" effects="parallax-background"></app-box>
     </section>
@@ -465,8 +465,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <section class="section" id="create">
       <article>
         <hr />
-        <h2>Create your own elements</h2>
-        <p>The Polymer library makes it easy to create your own powerful elements. Give your element some markup and properties, and then use it on a site. Polymer provides useful features like templating and data binding to reduce the amount of boilerplate you need to write.</p>
+        <h2 class="colorGhost">Lorem ipsum dolor</h2>
+        <p class="colorYellow">Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.</p>
       </article>
       <app-box class="fourth" effects="parallax-background"></app-box>
     </section>
@@ -490,7 +490,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       observers: [
         '_routePageChanged(routeData.page)'
       ],
-
       _routePageChanged: function(page) {
         this.page = page || 'view1';
       },
@@ -505,5 +504,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.page = 'view404';
       }
     });
+
+     function _onDownloadButtonClick(el) {
+       // Wait for ripple to finish.
+     // Wait for ripple to finish.
+        el.addEventListener('transitionend', function(e) {
+          location.href = '/#download';
+        });
+      }
   </script>
 </dom-module>
