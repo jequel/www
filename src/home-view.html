@@ -15,19 +15,206 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style include="shared-styles">
       :host {
+          display: block;
+          background-image : url('../images/untitled.svg');
+          background-size : 100% 900px;
+        }
+
+      .infoContainer h3 {
+        font-weight: 100;
+        font-size: 40px;
+        margin: 5px;
+        text-align: center;
+        visibility : visible;
         display: block;
       }
 
+      .infoContainers
+      {
+        text-align: center;
+        margin: 0 auto 80px auto;
+      }
 
 
+      .infoContainer.community
+      {
+        background-color :var(--google-yellow-700);
+        padding-top : 0px; 
+      }
+
+      .infoContainer.community a , .svgModifier a
+      {
+        text-decoration: none;
+        margin : 30px;
+      }
+
+      .infoContainer.community p
+      {
+        margin : 20px;
+      }
 
 
+      .infoContainer h3 {
+        font-weight: 100;
+        font-size: 40px;
+        margin: 5px;
+        text-align: center;
+        visibility : hidden;
+      }
+
+      .packagePathText
+      {
+          background-color : #000; 
+          color : var(--google-yellow-500);
+          border-style : solid; 
+          border-width : 3px; 
+          border-color :var(--google-yellow-500);
+          padding: 0.5em 0.55em;
+          text-align: center;
+      }
+
+      /*Laptops*/
+      @media screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 1) { 
+        .infoContainer
+          {
+            font-weight: 100;
+            max-width: 460px;
+            min-width: 460px;
+            text-align: center;
+            background-color : #1976d2;
+            margin : 5px;
+            display : inline-block;
+            padding : 10px; 
+          }
+          .infoContainer.community {
+            background-color :var(--google-yellow-700);
+            font-weight: 100;
+            min-width: 500px;
+            text-align: center;
+            display : inline-block;
+            padding-right : 100px;
+            padding-left : 100px;
+            padding-bottom : 10px;
+            padding-top : 0px;
+          }
+
+          .infoContainer.community h3 {
+            font-weight: 100;
+            font-size: 60px;
+            margin: 5px;
+            text-align: center;
+             visibility : visible;
+            display : block;
+
+          }
+      }
+
+      @media screen 
+      and (min-device-width: 1200px) 
+      and (max-device-width: 1600px) 
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (min-resolution: 192dpi) { 
+        .infoContainer
+          {
+            font-weight: 100;
+            max-width: 460px;
+            min-width: 460px;
+            text-align: center;
+            background-color : #1976d2;
+            margin : 5px;
+            display : inline-block;
+          }
+          .infoContainer.community {
+            background-color :var(--google-yellow-700);
+            font-weight: 100;
+            min-width: 500px;
+            text-align: center;
+            display : inline-block;
+            padding-right : 100px;
+            padding-left : 100px;
+          }
+
+          .infoContainer.community h3 {
+            font-weight: 100;
+            font-size: 60px;
+            margin: 5px;
+            text-align: center;
+            visibility : visible;
+            display : block;
+          }
+      }
+
+      /* IPhone 4 and other equal or smaller devices */
+      @media only screen 
+      and (min-device-width : 320px) 
+      and (min-device-height : 480px) 
+      { 
+        .infoContainer.community p
+        {
+           margin : 10px;
+        }
+        .infoContainer h3 {
+           display : none;
+           visibility : visible;
+         }
+      }
+
+      /*IPhone 5 and other equel  devices  */
+      @media only screen 
+      and (min-device-width : 320px) 
+      and (min-device-height : 568px) 
+      { 
+        .infoContainer.community p
+        {
+          margin : 20px;
+        }
+        .infoContainer h3 {
+          display : none;
+          visibility : visible;
+        }
+      }
+
+      /*IPhone 6 and other equel devices  */
+      @media only screen 
+      and (min-device-height : 600px) 
+      { 
+        .infoContainer.community p
+            {
+              margin : 20px;
+            }
+            .infoContainer h3 {
+              display : block;
+              visibility : visible;
+              padding-top : 30px;
+            }
+
+            .infoContainer.community
+            {
+              background-color :var(--google-yellow-700);
+              padding-top : 0px; 
+              padding-bottom : 100px; 
+            }
+
+            .packagePathText
+            {
+                background-color : #000; 
+                color : var(--google-yellow-500);
+                border-style : solid; 
+                border-width : 3px; 
+                border-color :var(--google-yellow-500);
+                padding: 0.5em 0.55em;
+                margin-bottom : 50px;
+                text-align: center;
+            }
+      }
       
     </style>
 
-        <section> 
-      <app-box  >
-          
+    
+          <section>
         <!--
           app-box allows to style the mixin `--app-box-background-front-layer` or create a custom background in the light DOM.
           In this case, we create a custom background by adding the attribute `background` to the `img` in
@@ -58,16 +245,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </a>
              </div>
           </div>
-          <img background src="../images/untitled.svg" style="width:100%; height: 900px" />
-       
-      </app-box>
-
-    </section>
-
-
-
-
-
+         
+          </section>
   </template>
 
   <script>
