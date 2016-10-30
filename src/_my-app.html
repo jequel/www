@@ -40,7 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
 
-      /* CSS Refactored  550  */
+      /* CSS Refactored  */
 
       /*App shell css section */
       app-header {
@@ -51,12 +51,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
       
-
+      .footer{
+        padding : 10px;
+        text-align : center;
+        vertical-align: middle;
+        line-height: normal;   
+      }
       header {
             background-color: white;
             height: 128px;
           }
-
       app-toolbar {
         font-size: 18px;
         font-weight: 400;
@@ -64,7 +68,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-align: center;
         color: #1a237e;
       }
-
       .nav {
         height: 64px;
         margin: 0;
@@ -93,16 +96,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         border-bottom: 1px solid #999;
       }
 
-      .footer{
-        padding : 0px;
-        text-align : center;
-        vertical-align: middle;
-        line-height: normal; 
-        width : 100%;
-        position:relative;bottom:0  ;
-        visibility : visible;
-      }
-
 
       /* Content section */
 
@@ -115,17 +108,112 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         -webkit-backdrop-filter: saturate(180%) blur(20px);
         backdrop-filter: saturate(180%) blur(20px);
       }
+    /* CSS NEEDS STRONG REFACTORING */
+    .first, .second, .third, .fourth {
+      height: 680px;
+    }
+    /* CSS NEEDS STRONG REFACTORING */
+    .second {
+      --app-box-background-front-layer: {
+        background-image: url(//app-layout-assets.appspot.com/assets/bg2.jpg);
+        background-position: bottom;
+        padding-bottom: 120px;
+        margin-top: -20px;
+        height: 100%;
+      };
+    }
 
- 
+    .third {
+      --app-box-background-front-layer: {
+        background-image: url(//app-layout-assets.appspot.com/assets/bg3.jpg);
+        background-position: bottom;
+        padding-bottom: 120px;
+        margin-top: -20px;
+        height: 100%;
+      };
+    }
+
+    .fourth {
+      --app-box-background-front-layer: {
+        background-image: url(//app-layout-assets.appspot.com/assets/bg4.jpg);
+        background-position: bottom;
+        padding-bottom: 120px;
+        margin-top: -20px;
+        height: 100%;
+      };
+    }
 
     /* CSS NEEDS STRONG REFACTORING */
+    .section {
+      padding-top: 100px;
+    }
 
+    article {
+      font-weight: 100;
+      max-width: 500px;
+      text-align: center;
+      margin: 0 auto 100px auto;
+    }
+    article h2 {
+      font-weight: 100;
+      font-size: 50px;
+      margin: 5px;
+    }
+
+    article p {
+      font-size: 18px;
+      line-height: 30px;
+    }
+    article hr {
+      width: 100px;
+      height: 1px;
+      border: none;
+      margin: 20px auto;
+      background-color: #eee;
+    }
     /*Take a look */ 
+    .colorYellow
+    {
+      color : var(--google-yellow-500);
+    }
+    .colorGhost
+    {
+      color : #eee;
+    }
+
+    .colorBlack
+    {
+      color : black;
+    }
+
+    .backgroundColorBlue{
+      background-color : #1976d2; 
+    }
 
     .backgroundColorYellow{
       background-color  : var(--google-yellow-700); 
     }
 
+    /* CSS NEEDS STRONG REFACTORING */
+    .triangle-down-left {
+    	width: 0;
+      height: 0;
+      border-top: 60px solid var(--google-yellow-500);
+      border-right: 90px solid transparent;
+      display:inline-block;
+    }
+    .triangle-down-right {
+    	width: 0;
+      height: 0;
+      border-top: 60px solid var(--google-yellow-700);
+      border-left: 90px solid transparent;
+      display:inline-block;
+    }
+    .bigYellowSquare
+    {
+      background-color : var(--google-yellow-500);
+      padding: 0.7em 0.57em;
+    }
 
     .bigBlueSquare
     {
@@ -137,16 +225,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .infoContainers
     {
       text-align: center;
-      margin: 0 auto 80px auto;
+      margin: 0 auto 100px auto;
     }
-
-
+    .infoContainer
+    {
+      font-weight: 100;
+      min-width: 320px;
+      text-align: center;
+      background-color : #1976d2;
+      display : block;
+      margin: 0 auto 5px auto;
+      padding-bottom : 10px;
+    }
 
     .infoContainer.community
     {
        background-color :var(--google-yellow-700);
-       padding-top : 0px; 
-       
+       padding-top : 60px; 
+       padding-bottom : 180px; 
     }
 
     .infoContainer.community a , .svgModifier a
@@ -167,8 +263,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-size: 40px;
       margin: 5px;
       text-align: center;
-      visibility : hidden;
     }
+
 
     .packagePathText
     {
@@ -221,94 +317,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         bottom:1px;
         top:auto;
       }
-
-    .infoContainer h3 {
-      font-weight: 100;
-      font-size: 40px;
-      margin: 5px;
-      text-align: center;
-      visibility : visible;
-      display: block;
-    }
-
-      /* IPhone 4 and other equal or smaller devices */
-      @media only screen 
-        and (min-device-width : 320px) 
-        and (min-device-height : 480px) 
-        { 
-            .infoContainer.community p
-            {
-              margin : 10px;
-            }
-            .infoContainer h3 {
-              display : none;
-              visibility : visible;
-            }
-        }
-        /*IPhone 5 and other equel  devices  */
-         @media only screen 
-          and (min-device-width : 320px) 
-          and (min-device-height : 568px) 
-          { 
-            .infoContainer.community p
-            {
-              margin : 20px;
-            }
-            .infoContainer h3 {
-              display : none;
-              visibility : visible;
-            }
-          }
-        
-        /*IPhone 6 and other equel devices  */
-         @media only screen 
-          and (min-device-height : 600px) 
-          { 
-            .infoContainer.community p
-            {
-              margin : 20px;
-            }
-            .infoContainer h3 {
-              display : block;
-              visibility : visible;
-              padding-top : 30px;
-            }
-
-            .infoContainer.community
-            {
-              background-color :var(--google-yellow-700);
-              padding-top : 0px; 
-              padding-bottom : 100px; 
-            }
-
-            .packagePathText
-            {
-                background-color : #000; 
-                color : var(--google-yellow-500);
-                border-style : solid; 
-                border-width : 3px; 
-                border-color :var(--google-yellow-500);
-                padding: 0.5em 0.55em;
-                margin-bottom : 50px;
-                text-align: center;
-            }
-          }
-
-
-     @media screen 
-      and (min-device-width: 1200px) 
-      and (max-device-width: 1600px) 
-      and (-webkit-min-device-pixel-ratio: 1) { 
-    .footer{
-        padding : 20px;
-        text-align : center;
-        vertical-align: middle;
-        line-height: normal; 
-        width : 100%;
-        position:relative;bottom:0  ;
-        visibility : visible;
-      }
-
+      @media screen and (min-width:800px)
+      {
           .infoContainer
           {
             font-weight: 100;
@@ -328,8 +338,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             display : inline-block;
             padding-right : 100px;
             padding-left : 100px;
-            padding-bottom : 10px;
-            padding-top : 0px;
+            padding-bottom : 70px;
+            padding-top : 60px;
           }
 
           .infoContainer.community h3 {
@@ -337,9 +347,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             font-size: 60px;
             margin: 5px;
             text-align: center;
-             visibility : visible;
-            display : block;
-
           }
 
         #forkongithub
@@ -368,81 +375,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
            -o-transform:rotate(45deg);
            box-shadow:4px 4px 10px rgba(0,0,0,0.8);
            }
-
-    }
-
-    /* ----------- Retina Screens ----------- */
-    @media screen 
-      and (min-device-width: 1200px) 
-      and (max-device-width: 1600px) 
-      and (-webkit-min-device-pixel-ratio: 2)
-      and (min-resolution: 192dpi) { 
-    .footer{
-        padding : 20px;
-        text-align : center;
-        vertical-align: middle;
-        line-height: normal; 
-        width : 100%;
-        position:relative;bottom:0  ;
-        visibility : visible;
-      }
-
-          .infoContainer
-          {
-            font-weight: 100;
-            max-width: 460px;
-            min-width: 460px;
-            text-align: center;
-            background-color : #1976d2;
-            margin : 5px;
-            display : inline-block;
-          }
-          .infoContainer.community {
-            background-color :var(--google-yellow-700);
-            font-weight: 100;
-            min-width: 500px;
-            text-align: center;
-            display : inline-block;
-            padding-right : 100px;
-            padding-left : 100px;
-          }
-
-          .infoContainer.community h3 {
-            font-weight: 100;
-            font-size: 60px;
-            margin: 5px;
-            text-align: center;
-            visibility : visible;
-            display : block;
-          }
-
-        #forkongithub
-        {
-          visibility : visible; 
-          position:fixed;
-          display:block;
-          top:0;
-          right:0;
-          width:200px;
-          overflow:hidden;
-          height:200px;
-          z-index:9999;
-         }
-
-        #forkongithub a
-         {
-           width:200px;
-           position:absolute;
-           top:60px;
-           right:-60px;
-           transform:rotate(45deg);
-           -webkit-transform:rotate(45deg);
-           -ms-transform:rotate(45deg);
-           -moz-transform:rotate(45deg);
-           -o-transform:rotate(45deg);
-           box-shadow:4px 4px 10px rgba(0,0,0,0.8);
-           }
-    }
+        }
 
     </style>
 
@@ -454,6 +387,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         tail="{{subroute}}"></app-route>
 
   <span id="forkongithub"><a href="">Under Construction</a></span>
+  
   <header>
     <app-toolbar id="appTop">
       <div main-title>JEQUEL PROJECT</div>
@@ -470,46 +404,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <main>
     <section> 
-      <app-box  >
+      <app-box class="first" effects="parallax-background">
           
         <!--
           app-box allows to style the mixin `--app-box-background-front-layer` or create a custom background in the light DOM.
           In this case, we create a custom background by adding the attribute `background` to the `img` in
           the light DOM.
         -->
-          <div  class="infoContainers">
-            <div class="infoContainer community">
-                <h3><div class="colorBlue">Jequel Project</div></h3>
-                <br/>
-                <p class="colorBlack">This is a Heroic Javascript Framework for data search against json and arrays.</p>
-                <paper-button class="bigBlueSquare" onClick="_onDownloadButtonClick(this)">Download .ZIP</paper-button>
-                <p>- OR -</p>
-                <div class="packagePathText">bower install --save  ...not ready yet  ...</div>  
-                <p></p>
+     
 
-                <a class="header-logo-invertocat" href="https://github.com/jequel/Jequel.git" data-hotkey="g d" aria-label="Jequel Page" data-ga-click="Header, go to dashboard, icon:logo">
-                  <svg aria-hidden="true" class="octicon octicon-mark-github" height="38" version="1.1" viewBox="0 0 16 16" width="38"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38         0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                  </svg>
-                </a> 
-                 <a class="header-logo-invertocat" href="https://www.facebook.com/jequel.org/" data-hotkey="g d" aria-label="Jequel Page" data-ga-click="Header, go to dashboard, icon:logo">           
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"  width="40" height="40" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-                    <path d="M398.14,50.5H117.98c-36.408,0-68.48,26.452-68.48,62.86v280.16c0,36.408,32.072,68.98,68.48,68.98h173.466  c-0.325-54,0.077-114.134-0.185-166.387c-11.064-0.112-22.138-0.684-33.202-0.854c0.041-18.467,0.017-37.317,0.024-55.781  c11.057-0.137,22.121-0.163,33.178-0.268c0.338-17.957-0.338-36.025,0.354-53.966c1.103-14.205,6.519-28.563,17.14-38.377  c12.859-12.239,31.142-16.397,48.387-16.912c18.233-0.163,36.468-0.076,54.71-0.068c0.072,19.24,0.072,38.482-0.008,57.722  c-11.789-0.02-23.585,0.023-35.374-0.025c-7.468-0.467-15.145,5.198-16.504,12.609c-0.177,12.875-0.064,25.757-0.057,38.628  c17.285,0.073,34.577-0.02,51.862,0.044c-1.264,18.629-3.581,37.168-6.285,55.637c-15.272,0.137-30.554,1.514-45.818,1.602  c-0.129,52.236,0.04,112.395-0.093,166.395h38.564c36.408,0,63.36-32.572,63.36-68.98V113.36C461.5,76.952,434.548,50.5,398.14,50.5  z"/>
-                  </svg>
-                 </a>
-                  <a class="header-logo-invertocat" href="https://twitter.com/JequelProject" data-hotkey="g d" aria-label="Jequel Page" data-ga-click="Header, go to dashboard, icon:logo">           
-                    <svg id="Logo_FIXED" data-name="Logo — FIXED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="39" height="39"><defs><style>.cls-1{fill:none;}.cls-2{fill:#000;}</style></defs><title>Twitter_Logo_Blue</title><rect class="cls-1" width="28" height="28"/><path class="cls-2"       d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,      15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23"/>
-                    </svg>
-                  </a>
-             </div>
-          </div>
-          <img background src="../images/untitled.svg" style="width:100%; height: 900px" />
+        <div  class="infoContainers">
+          <div class="infoContainer community">
+            <h3><div class="colorBlue">Jequel Project</div></h3>
+            <br/>
+            <p class="colorBlack">This is a Heroic Javascript Framework for data search against json and arrays.</p>
+             <paper-button class="bigBlueSquare" onClick="_onDownloadButtonClick(this)">Download .ZIP</paper-button>
+             <p>- OR -</p>
+            <div class="packagePathText">bower install --save  ...not ready yet  ...</div>  
+            <p></p>
+          <!--Logos -->
+
+            <a class="header-logo-invertocat" href="https://github.com/jequel/Jequel.git" data-hotkey="g d" aria-label="Jequel Page" data-ga-click="Header, go to dashboard, icon:logo">
+                 <svg aria-hidden="true" class="octicon octicon-mark-github" height="38" version="1.1" viewBox="0 0 16 16" width="38"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38         0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a> 
+            <a class="header-logo-invertocat" href="https://www.facebook.com/jequel.org/" data-hotkey="g d" aria-label="Jequel Page" data-ga-click="Header, go to dashboard, icon:logo">           
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1"  width="40" height="40" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                <path d="M398.14,50.5H117.98c-36.408,0-68.48,26.452-68.48,62.86v280.16c0,36.408,32.072,68.98,68.48,68.98h173.466  c-0.325-54,0.077-114.134-0.185-166.387c-11.064-0.112-22.138-0.684-33.202-0.854c0.041-18.467,0.017-37.317,0.024-55.781  c11.057-0.137,22.121-0.163,33.178-0.268c0.338-17.957-0.338-36.025,0.354-53.966c1.103-14.205,6.519-28.563,17.14-38.377  c12.859-12.239,31.142-16.397,48.387-16.912c18.233-0.163,36.468-0.076,54.71-0.068c0.072,19.24,0.072,38.482-0.008,57.722  c-11.789-0.02-23.585,0.023-35.374-0.025c-7.468-0.467-15.145,5.198-16.504,12.609c-0.177,12.875-0.064,25.757-0.057,38.628  c17.285,0.073,34.577-0.02,51.862,0.044c-1.264,18.629-3.581,37.168-6.285,55.637c-15.272,0.137-30.554,1.514-45.818,1.602  c-0.129,52.236,0.04,112.395-0.093,166.395h38.564c36.408,0,63.36-32.572,63.36-68.98V113.36C461.5,76.952,434.548,50.5,398.14,50.5  z"/>
+              </svg>
+            </a>
+            <a class="header-logo-invertocat" href="https://twitter.com/JequelProject" data-hotkey="g d" aria-label="Jequel Page" data-ga-click="Header, go to dashboard, icon:logo">           
+              <svg id="Logo_FIXED" data-name="Logo — FIXED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="39" height="39"><defs><style>.cls-1{fill:none;}.cls-2{fill:#000;}</style></defs><title>Twitter_Logo_Blue</title><rect class="cls-1" width="28" height="28"/><path class="cls-2"       d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,      15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23"/>
+              </svg>
+            </a>
+           </div>
+         </div>
+         <img background src="../images/untitled.svg" style="width:100%; height: 900px" />
        
-      </app-box>
-
-    </section>
-     <div class="footer">
-      © 2016 Jequel Project Authors. Code Licensed under the BSD License. Documentation licensed under CC BY 3.0
+         </app-box>
+      <div class="footer backgroundColorYellow">
+        © 2016 Jequel Project Authors. Code Licensed under the BSD License. Documentation licensed under CC BY 3.0.
     </div>
+    </section>
 
 <!--
     <section class="section backgroundColorBlue" id="start">
