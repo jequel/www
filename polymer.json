@@ -3,9 +3,9 @@
   "shell": "src/my-app.html",
   "fragments": [
     "src/download-view.html", 
-    "src/news-view.html", 
-    "src/my-view404.html", 
-    "src/fork-elem.html"
+    "src/news-view.html",
+    "src/fork-elem.html",
+    "src/my-view404.html"
   ],
   "sourceGlobs": [
    "src/**/*",
