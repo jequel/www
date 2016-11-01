@@ -9,13 +9,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- UI  -->
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
 <link rel="import" href="../bower_components/app-layout/app-box/app-box.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
-<link rel="import" href="home-view.html">
+<!-- Routing and localization -->
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<!-- Views -->
+<link rel="import" href="download-view.html">
 <link rel="import" href="fork-elem.html">
+<link rel="import" href="my-view404.html">
+
 
 <!--
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
@@ -24,10 +34,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../bower_components/app-route/app-location.html">
-<link rel="import" href="../bower_components/app-route/app-route.html">
-<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
-<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 -->
 <link rel="import" href="my-icons.html">
@@ -165,17 +172,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </app-toolbar>
     <app-box threshold="64">
       <ul role="navigation" class="nav">
-        <li><a href="#appTop">Download</a></li>
-        <li><a href="#start">Start</a></li>
-        <li><a href="#docs">Docs</a></li>
-        <li><a href="#sorry">News</a></li>
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <li><a name="donwload" href="/download">Download</a></li>    
+          <li><a name="news" href="/news">News</a></li>
+        </iron-selector>
+
+      
+      
+
       </ul>
     </app-box>
   </header>
 
   <main>
       <app-box>   
-        <home-view></home-view>
+         <iron-pages
+            selected="[[page]]"
+            attr-for-selected="name"
+            fallback-selection="view404"
+            role="main">
+       
+          <download-view name="download"></download-view>
+          <news-view name="news"></news-view>
+       
+        </iron-pages>
+
       </app-box>
      <div class="footer">
       © 2016 Jequel Project Authors. Code Licensed under the BSD License. Documentation licensed under CC BY 3.0
@@ -200,12 +221,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         '_routePageChanged(routeData.page)'
       ],
       _routePageChanged: function(page) {
-        this.page = page || 'view1';
+        this.page = page || 'download';
       },
 
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
+        var resolvedPageUrl = this.resolveUrl(page + '-view.html');
         this.importHref(resolvedPageUrl, null, this._showPage404, true);
       },
 

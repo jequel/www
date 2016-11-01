@@ -11,7 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
 
-<dom-module id="home-view">
+<dom-module id="download-view">
   <template>
     <style include="shared-styles">
       :host {
@@ -28,6 +28,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       {
         background-color :var(--google-yellow-700);
       }
+
+      .infoContainer.community
+      {
+        max-width:450px;
+      }
+
       .infoContainer.community a , .svgModifier a
       {
         text-decoration: none;
@@ -56,13 +62,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               display : inline-block;
               padding-right : 30px;
               padding-left :  30px;
-              padding-bottom : 30px;
-              padding-top : 20px;
+              padding-bottom : 10px;
+              padding-top : 10px;
             }
             .infoContainer h3 
             {
               font-weight: 100;
-              font-size: 60px;
+              font-size: 40px;
               margin: 5px;
               text-align: center;
               visibility : visible;
@@ -82,7 +88,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               padding-right : 60px;
               padding-left :  60px;
               padding-bottom : 70px;
-              padding-top : 40px;
+              padding-top : 30px;
             }
 
             .infoContainer.community p
@@ -154,7 +160,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     Polymer({
-      is: 'home-view'
+      is: 'download-view'
     });
   </script>
 </dom-module>

@@ -2,8 +2,10 @@
   "entrypoint": "index.html",
   "shell": "src/my-app.html",
   "fragments": [
-    "src/home-view.html", 
-    "src/fork-elem"
+    "src/download-view.html", 
+    "src/news-view.html", 
+    "src/my-view404.html", 
+    "src/fork-elem.html"
   ],
   "sourceGlobs": [
    "src/**/*",
