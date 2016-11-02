@@ -11,11 +11,7 @@ module.exports = {
   staticFileGlobs: [
     '/index.html',
     '/manifest.json',
-    '/bower_components/webcomponentsjs/webcomponents-lite.min.js', 
-    'https://app-layout-assets.appspot.com/assets/bg4.jpg', 
-    'https://app-layout-assets.appspot.com/assets/bg3.jpg',
-    'https://app-layout-assets.appspot.com/assets/bg2.jpg',
-    'https://app-layout-assets.appspot.com/assets/bg1.jpg'   
+    '/bower_components/webcomponentsjs/webcomponents-lite.min.js'
   ],
   navigateFallback: '/index.html'
 };
