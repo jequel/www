@@ -1,0 +1,131 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- shared styles for all views -->
+<dom-module id="shared-styles">
+  <template>
+    <style>
+
+      .backgroundColorYellow{
+        background-color  : var(--google-yellow-700); 
+      }
+
+      .bigBlueSquare
+      {
+        background-color : var(--google-blue-700);
+        padding: 0.7em 0.57em;
+        color : #eee;
+      }
+
+      .packagePathText
+      {
+          background-color : #000; 
+          color : var(--google-yellow-500);
+          border-style : solid; 
+          border-width : 3px; 
+          border-color :var(--google-yellow-500);
+          padding: 0.5em 0.55em;
+          text-align: center;
+      }
+      
+      @media (min-device-width: 760px)
+      {
+        section {
+            padding-left: 220px;
+            padding-right: 220px;
+            padding-top : 10px;
+            padding-bottom : 10px;
+        }
+
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        section {
+            padding-left: 120px;
+            padding-right: 120px;
+            padding-top : 10px;
+            padding-bottom : 10px;
+        }
+        
+      }
+
+      @media (max-device-width: 320px)
+      { 
+        a{
+            display: inline-block;
+            font-weight: 12px;
+            line-height: 64px;
+            color: #1e88e5;
+            font-weight: 300;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size:20px;
+         }
+         .smallTitle
+         {
+           font-size:15px;
+         }
+      }
+
+
+      h1 {
+        margin: 16px 0;
+        font-size: 22px;
+      }
+      
+      h2{
+         margin: 0px;
+         
+      }
+
+      h3{
+        color: #000;
+        font-weight: 100;
+        font-size: 40px;
+        margin: 0px;
+        visibility : visible;
+        display: block;
+        margin-left : 10px;
+      }
+
+      a
+      {
+        display: inline-block;
+        font-weight: 12px;
+        line-height: 64px;
+        color: #1e88e5;
+        font-weight: 300;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+     
+      a:hover {
+        text-decoration : underline;
+      }
+
+      .smallTitle
+      {
+        margin-top : 0px;
+        line-height: 0px;
+      }
+      .author{
+        margin-top:0px;
+        line-height: 0px;
+      }
+      p
+      {
+        margin-left : 10px;
+      }
+    </style>
+  </template>
+</dom-module>
