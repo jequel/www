@@ -1,0 +1,27 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="news-item-element">
+  <template>
+    <style include="shared-styles">
+      :host {
+          display: block;
+      }
+    </style>
+    
+    <div class="article">
+        <h2><a>[[news.title]]</a></h2>
+        <div class="author"><pre><a href="/download" class="smallTitle">[[news.author]],</a>[[news.date]]</pre></div>
+        <p>[[news.description]]</p>
+    </div>
+  
+  </template>
+  <script>
+    Polymer({
+      is: 'news-item-element',
+      properties: {
+        news: Object
+      }
+    });
+  </script>
+</dom-module>

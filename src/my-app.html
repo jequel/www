@@ -21,6 +21,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<!-- List and similiar behaviour-->
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-list/iron-list.html">
+
 
 <!-- Views -->
 <link rel="import" href="download-view.html" async>
@@ -179,10 +184,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <li><a name="donwload" href="/download">Download</a></li>    
           <li><a name="news" href="/news">News</a></li>
         </iron-selector>
-
-      
-      
-
       </ul>
     </app-box>
   </header>
@@ -201,11 +202,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </iron-pages>
 
       </app-box>
-     <div class="footer">
+       <div class="footer">
       © 2016 Jequel Project Authors. Code Licensed under the BSD License. Documentation licensed under CC BY 3.0
-    </div>
+      </div>
   </main>
-  
+
   </template>
 
   <script>
