@@ -25,7 +25,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-list/iron-list.html">
-
+<!-- Firebase -->
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
 
 <!-- Views -->
 <link rel="import" href="download-view.html" async>
@@ -172,6 +174,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         pattern="/:page"
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
+    <firebase-app
+      api-key="AIzaSyCUQqgMwC-6X47CooA012eTbDp7teBu_mI"
+      database-url="https://jequel-2abca.firebaseio.com"
+      auth-domain="jequel-2abca.firebaseapp.com"
+      storage-bucket="jequel-2abca.appspot.com">
+    </firebase-app>
+
+
+
 
   <fork-elem></fork-elem>
   <header>
@@ -220,14 +231,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           observer: '_pageChanged'
         }
       },
-
+      
       observers: [
         '_routePageChanged(routeData.page)'
       ],
       _routePageChanged: function(page) {
         this.page = page || 'download';
       },
+      ready : function(){
 
+        
+
+
+      },
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
         var resolvedPageUrl = this.resolveUrl(page + '-view.html');
@@ -241,6 +257,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _showPage404: function() {
         this.page = 'view404';
       }
+
     });
 
      function _onDownloadButtonClick(el) {

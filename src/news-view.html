@@ -9,6 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-query.html">
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="news-item-element.html">
 <dom-module id="news-view">
@@ -31,8 +32,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </section>
     
      <section class="short">
-      
-     <iron-ajax url="newsData.json" last-response="{{data}}" auto></iron-ajax>
+      <firebase-query
+          path="/news"
+          data="{{data}}">
+      </firebase-query>
+
+     <!--<iron-ajax url="newsData.json" last-response="{{data}}" auto></iron-ajax>-->
      <iron-list items="[[data]]" as="item" scroll-target="document">
         <template>
             <news-item-element news="[[item]]"></news-item-element>
