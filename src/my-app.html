@@ -26,7 +26,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-list/iron-list.html">
 <!-- Firebase -->
-<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
 
 <!-- Views -->
@@ -181,8 +180,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       auth-domain="jequel-2abca.firebaseapp.com"
       storage-bucket="jequel-2abca.appspot.com">
     </firebase-app>
-    <firebase-auth id="auth" user="{{user}}" provider="anonymus">
-    </firebase-auth>
+
 
 
  
@@ -241,7 +239,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.page = page || 'download';
       },
       ready : function(){
-          this.$.auth.signInAnonymously().then(function(response) { console.log('sign in success!'); }).catch(function(error) {console.log('Sign in error');});
       },
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
