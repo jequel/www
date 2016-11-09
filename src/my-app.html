@@ -174,16 +174,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         pattern="/:page"
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
+   
     <firebase-app
       api-key="AIzaSyCUQqgMwC-6X47CooA012eTbDp7teBu_mI"
       database-url="https://jequel-2abca.firebaseio.com"
       auth-domain="jequel-2abca.firebaseapp.com"
       storage-bucket="jequel-2abca.appspot.com">
     </firebase-app>
+    <firebase-auth id="auth" user="{{user}}" provider="anonymus">
+    </firebase-auth>
 
 
-
-
+ 
   <fork-elem></fork-elem>
   <header>
     <app-toolbar id="appTop">
@@ -239,10 +241,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.page = page || 'download';
       },
       ready : function(){
-
-        
-
-
+          this.$.auth.signInAnonymously().then(function(response) { console.log('sign in success!'); }).catch(function(error) {console.log('Sign in error');});
       },
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
