@@ -26,7 +26,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-list/iron-list.html">
 <!-- Firebase -->
+
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-storage-script.html">
 
 <!-- Views -->
 <link rel="import" href="download-view.html" async>
@@ -257,10 +260,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 
      function _onDownloadButtonClick(el) {
+       
        // Wait for ripple to finish.
-     // Wait for ripple to finish.
         el.addEventListener('transitionend', function(e) {
-          location.href = '/#sorry';
+           //Make reference to firebase ref storage
+           var storage = firebase.storage();
+           var gsReference = storage.ref('TestStorage/testComponent.zip')
+           //Get the url to file and download it or log error to the console 
+           gsReference.getDownloadURL().then(function(url) {
+              location.href =url;}).catch(function(error) { console.log(error);
+            });
         });
       }
   </script>
