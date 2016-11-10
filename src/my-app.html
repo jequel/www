@@ -21,6 +21,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<!-- List and similiar behaviour-->
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-list/iron-list.html">
+<!-- Firebase -->
+
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-storage-script.html">
 
 <!-- Views -->
 <link rel="import" href="download-view.html" async>
@@ -167,7 +176,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         pattern="/:page"
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
+   
+    <firebase-app
+      api-key="AIzaSyCUQqgMwC-6X47CooA012eTbDp7teBu_mI"
+      database-url="https://jequel-2abca.firebaseio.com"
+      auth-domain="jequel-2abca.firebaseapp.com"
+      storage-bucket="jequel-2abca.appspot.com">
+    </firebase-app>
 
+
+
+ 
   <fork-elem></fork-elem>
   <header>
     <app-toolbar id="appTop">
@@ -179,10 +198,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <li><a name="donwload" href="/download">Download</a></li>    
           <li><a name="news" href="/news">News</a></li>
         </iron-selector>
-
-      
-      
-
       </ul>
     </app-box>
   </header>
@@ -201,11 +216,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </iron-pages>
 
       </app-box>
-     <div class="footer">
+       <div class="footer">
       © 2016 Jequel Project Authors. Code Licensed under the BSD License. Documentation licensed under CC BY 3.0
-    </div>
+      </div>
   </main>
-  
+
   </template>
 
   <script>
@@ -219,14 +234,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           observer: '_pageChanged'
         }
       },
-
+      
       observers: [
         '_routePageChanged(routeData.page)'
       ],
       _routePageChanged: function(page) {
         this.page = page || 'download';
       },
-
+      ready : function(){
+      },
       _pageChanged: function(page) {
         // Load page import on demand. Show 404 page if fails
         var resolvedPageUrl = this.resolveUrl(page + '-view.html');
@@ -240,13 +256,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _showPage404: function() {
         this.page = 'view404';
       }
+
     });
 
      function _onDownloadButtonClick(el) {
+       
        // Wait for ripple to finish.
-     // Wait for ripple to finish.
         el.addEventListener('transitionend', function(e) {
-          location.href = '/#sorry';
+           //Make reference to firebase ref storage
+           var storage = firebase.storage();
+           var gsReference = storage.ref('TestStorage/testComponent.zip')
+           //Get the url to file and download it or log error to the console 
+           gsReference.getDownloadURL().then(function(url) {
+              location.href =url;}).catch(function(error) { console.log(error);
+            });
         });
       }
   </script>

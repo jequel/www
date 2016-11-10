@@ -9,24 +9,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-query.html">
+<link rel="import" href="../bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
 <link rel="import" href="shared-styles.html">
-
+<link rel="import" href="news-item-element.html">
 <dom-module id="news-view">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
-        padding: 10px;
+        padding: 10px;    
       }
+       iron-list {
+          height: 100vh;
+        }
+        
+
     </style>
    
     <section class="backgroundColorYellow">
       <H3>News</H3>
-      <p>The latest goings-on with the Jequel project and in the community. We'll update this page to announce major releases and showcase other cool stuff.</p>
+      <p>The latest goings-on with the Jequel project and news in the community. We'll update this page to announce major releases and showcase other cool stuff.</p>
     </section>
     
-    <section class="short">
+     <section class="short">
+      <firebase-query
+          path="/news"
+          data="{{data}}">
+      </firebase-query>
       
+    <app-indexeddb-mirror
+          session="a-unique-session-key-413"
+          key="news"
+          data="{{data}}"
+          persisted-data="{{persistedData}}">
+      </app-indexeddb-mirror>
+
+     <!--<iron-ajax url="newsData.json" last-response="{{data}}" auto></iron-ajax>-->
+     <iron-list items="[[persistedData]]" as="item" scroll-target="document">
+        <template>
+            <news-item-element news="[[item]]"></news-item-element>
+        </template>
+      </iron-list>
+
+
       <!--
        <div>
          <h3>JequelCast</h3>
@@ -40,48 +66,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        </div>
        -->
        <!--Elements list-->
-      <div class="article">
-        <h2><a>Please Welcome Jequel 0.1</a></h2>
-        <div class="author"><pre><a href="/download" class="smallTitle">Jequel Team,</a>2016-11-01</pre></div>
-        <p>A look back at Google I/O 2016, and some background on the Polymer Project's call to #UseThePlatform.</p>
-
-
-      </div>
-
-      <div class="article">
-        <h2><a>Please Welcome Jequel 0.1</a></h2>
-        <div class="author"><pre><a href="/download" class="smallTitle">Jequel Team,</a>2016-11-01</pre></div>
-        <p>A look back at Google I/O 2016, and some background on the Polymer Project's call to #UseThePlatform.</p>
-
-      </div>
-   
-       <div class="article">
-        <h2><a>Please Welcome Jequel 0.1</a></h2>
-        <div class="author"><pre><a href="/download" class="smallTitle">Jequel Team,</a>2016-11-01</pre></div>
-        <p>A look back at Google I/O 2016, and some background on the Polymer Project's call to #UseThePlatform.</p>
-
-      </div>
-
-      <div class="article">
-        <h2><a>Please Welcome Jequel 0.1</a></h2>
-        <div class="author"><pre><a href="/download" class="smallTitle">Jequel Team,</a>2016-11-01</pre></div>
-        <p>A look back at Google I/O 2016, and some background on the Polymer Project's call to #UseThePlatform.</p>
-      </div>
-
-      <div class="article">
-        <h2><a>Please Welcome Jequel 0.1</a></h2>
-        <div class="author"><pre><a href="/download" class="smallTitle">Jequel Team,</a>2016-11-01</pre></div>
-        <p>A look back at Google I/O 2016, and some background on the Polymer Project's call to #UseThePlatform.</p>
-
-      </div>
-   
-       <div class="article">
-        <h2><a>Please Welcome Jequel 0.1</a></h2>
-        <div class="author"><pre><a href="/download" class="smallTitle">Jequel Team,</a>2016-11-01</pre></div>
-        <p>A look back at Google I/O 2016, and some background on the Polymer Project's call to #UseThePlatform.</p>
-
-      </div>
-
+     <!-- 
+     
+       <news-item-element></news-item-element>
+       <news-item-element></news-item-element>
+       <news-item-element></news-item-element>
+       <news-item-element></news-item-element>
+       <news-item-element></news-item-element>
+       <news-item-element></news-item-element>-->
     </section>
 
   </template>
